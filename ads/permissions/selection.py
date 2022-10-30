@@ -2,7 +2,7 @@ from rest_framework import permissions
 
 
 class IsCreatedBy(permissions.BasePermission):
-    message = 'Only user who created the selection could delete it.'
+    message = 'Только пользователь, создавший обьявление, может удалить его.'
 
     def has_object_permission(self, request, view, obj):
         if obj.owner == request.user:

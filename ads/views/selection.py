@@ -7,33 +7,33 @@ from ads.serializers.selection import SelectionSerializer, SelectionCreateSerial
 
 
 class SelectionListView(ListAPIView):
-    """Display all selections"""
+    """Отобразить все выборки"""
     queryset = Selection.objects.all()
     serializer_class = SelectionSerializer
 
 
 class SelectionDetailView(RetrieveAPIView):
-    """Display selection by id"""
+    """Показать выборку по id"""
     queryset = Selection.objects.all()
     serializer_class = SelectionSerializer
 
 
 class SelectionCreateView(CreateAPIView):
-    """Create new selection"""
+    """Создать новый выборку"""
     queryset = Selection.objects.all()
     serializer_class = SelectionCreateSerializer
     permission_classes = [IsAuthenticated]
 
 
 class SelectionUpdateView(UpdateAPIView):
-    """Update add by id"""
+    """Обновить выборку по id"""
     queryset = Selection.objects.all()
     serializer_class = SelectionUpdateSerializer
     permission_classes = [IsAuthenticated, IsCreatedBy]
 
 
 class SelectionDeleteView(DestroyAPIView):
-    """Delete selection by id"""
+    """Удалить выборку по id"""
     queryset = Selection.objects.all()
     serializer_class = SelectionSerializer
     permission_classes = [IsAuthenticated, IsCreatedBy]

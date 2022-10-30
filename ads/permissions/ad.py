@@ -4,7 +4,7 @@ from users.models.user import User
 
 
 class IsCreatedByOrAdminOrModerator(permissions.BasePermission):
-    message = 'Only user who created the ad, amdin and moderators could modify or delete it.'
+    message = 'Только пользователь, создавший объявление, amdin и модераторы могen изменять или удалять его.'
 
     def has_object_permission(self, request, view, obj):
         if request.user.role == User.ADMIN or request.user.role == User.MODERATOR:

@@ -50,7 +50,7 @@ class AdDetailView(RetrieveAPIView):
 
 
 class AdCreateView(CreateAPIView):
-    """Create new add"""
+    """Создать новое объявление"""
     queryset = Ad.objects.all()
     serializer_class = AdCreateSerializer
 
@@ -60,7 +60,7 @@ class IsCreatedByOrAdminOrModerator:
 
 
 class AdUpdateView(UpdateAPIView):
-    """Update add by id"""
+    """Обновить объявление по id"""
     queryset = Ad.objects.all()
     serializer_class = AdUpdateSerializer
     permission_classes = [IsAuthenticated, IsCreatedByOrAdminOrModerator]
@@ -73,7 +73,7 @@ class AdImageView(UpdateAPIView):
 
 
 class AdDeleteView(DestroyAPIView):
-    """Delete ad by id"""
+    """Удалить обьявление по id"""
     queryset = Ad.objects.all()
     serializer_class = AdSerializer
     permission_classes = [IsAuthenticated, IsCreatedByOrAdminOrModerator]
